@@ -55,7 +55,7 @@ a:hover {
   text-align: center;
 }
 
-.homepage-button {
+.global-button {
   width: 20vh;
   background-color: var(--main-color);
   margin: 1.25vh;
@@ -65,7 +65,7 @@ a:hover {
   color: white;
 }
 
-.homepage-button:hover {
+.global-button:hover {
   color: var(--main-color);
   background-color:rgb(255, 186, 180);
 }
@@ -94,7 +94,7 @@ a:hover {
   margin-top: 2vh;
 }
 
-/* signup page */
+/* Views --> Sessions --> new.hbs */
 #parent {
   display: flex;
   justify-content: center;
@@ -114,4 +114,64 @@ a:hover {
 
 .signup-box p {
   text-align: center;
+}
+
+/* Views --> Posts --> Navbar timeline */
+/* Fixes the navbar when a user scrolls down */
+.timeline-navbar {
+  background-color: white;
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--main-color);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar, .bottombar {
+  display: flex;
+  align-items: center;
+  width: 88%;
+}
+
+.topbar {
+  justify-content: space-between;
+  padding-top: 5vh;
+}
+
+.bottombar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5vh 0vh;
+}
+
+.initials {
+  display: flex;
+  padding: 2vh;
+  border-radius: 100%;
+  border-style: solid;
+  height: 9vh;
+  width: 9vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  width: auto;
+  margin: 0;
+}
+
+.comment-box {
+  margin-top: 10vh;
 }
