@@ -1,11 +1,23 @@
 const mongoose = require("mongoose");
 
+const CommentSchema = new mongoose.Schema({
+  author: String,
+  content: {
+    type: String,
+    maxLength: 114,
+    timestamp: { type: Date, default: Date.now },
+  }
+});
+
 const PostSchema = new mongoose.Schema({
   author: String,
-  message: String,
+  message: {
+    type: String,
+    maxLength: 30000
+  },
   likes: { type: Number, default: 0 },
-  comments: Array
-});
+  comments: [CommentSchema]
+}, { timestamps: true });
 
 const Post = mongoose.model("Post", PostSchema);
 
