@@ -4,7 +4,8 @@ const PostSchema = new mongoose.Schema({
   author: String,
   message: {
     type: String,
-    required: true
+    required: true,
+    maxLength: 33000
   },
   likes: { type: Number, default: 0 },
   comments: Array
