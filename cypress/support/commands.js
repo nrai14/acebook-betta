@@ -23,3 +23,14 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+const mongoose = require('mongoose');
+
+Cypress.Commands.add('clearDb', () => {
+ return cy.task('clearDb').then(() => {
+   return new Promise((resolve) => {
+     mongoose.connection.once('open', () => {
+       resolve();
+     });
+   });
+ });
+});
