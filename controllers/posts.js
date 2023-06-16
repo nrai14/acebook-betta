@@ -34,6 +34,15 @@ const PostsController = {
       res.status(201).redirect("/posts");
     });
   },
+  Like: async (req, res) => {
+    // console.log("post id ", req.params.id)
+
+    let post = await Post.findById(req.params.id).exec()
+    post.likes += 1
+    post.save(() => {
+      res.status(201).redirect("/posts");
+    })
+  }
 
   //
 };
