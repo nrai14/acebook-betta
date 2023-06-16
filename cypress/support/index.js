@@ -22,7 +22,7 @@ require('./commands')
 before(() => {
   const email = "admin@example.com";
   const password = "Password!123";
-  
+
   cy.visit("/");
   cy.get('a.global-button[href="/users/new"]').contains('Sign Up').click();
   cy.get("#email").type(email);

@@ -6,6 +6,7 @@ const PostSchema = new mongoose.Schema({
   message: {
     type: String,
     maxLength: 500
+    required: true,
   },
   likes: { type: Number, default: 0 },
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }]

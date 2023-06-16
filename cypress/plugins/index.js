@@ -14,3 +14,18 @@
 module.exports = function() {
   
 }
+
+//
+//const mongoose = require('mongoose');
+//
+//module.exports = (on) => {
+//  on('task', {
+//    async clearDb() {
+//      await mongoose.connect('mongodb://0.0.0.0/acebook_test');
+//      await mongoose.connection.db.dropDatabase();
+//      await mongoose.connection.close();
+//      return null;
+//    }
+//  });
+//};
+//
