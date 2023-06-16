@@ -13,7 +13,7 @@ const PostSchema = new mongoose.Schema({
   author: String,
   message: {
     type: String,
-    maxLength: 33000
+    maxLength: 500
   },
   likes: { type: Number, default: 0 },
   comments: [CommentSchema]
