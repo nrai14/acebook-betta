@@ -11,7 +11,10 @@ const CommentSchema = new mongoose.Schema({
 
 const PostSchema = new mongoose.Schema({
   author: String,
-  message: String,
+  message: {
+    type: String,
+    maxLength: 33000
+  },
   likes: { type: Number, default: 0 },
   comments: [CommentSchema]
 }, { timestamps: true });
