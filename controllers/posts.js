@@ -3,6 +3,10 @@ const Comment = require("../models/comment");
 
 const PostController = {
   Index: (req, res) => {
+    const firstName = req.session.user.firstName;
+    const lastName = req.session.user.lastName;
+    const initials = `${firstName[0]}${lastName[0]}`
+
     Post.find()
       .populate("comments")
       .exec((err, posts) => {
@@ -11,19 +15,39 @@ const PostController = {
         }
         const reversedPosts = posts.slice().reverse();
 
-        res.render("posts/index", { posts: reversedPosts });
+        res.render("posts/index", { posts: reversedPosts, initials: initials });
       });
   },
 
   New: (req, res) => {
-    res.render("posts/new", {});
+    const firstName = req.session.user.firstName;
+    const lastName = req.session.user.lastName;
+    const initials = `${firstName[0]}${lastName[0]}`
+    res.render("posts/new", {initials: initials});
   },
 
   Create: (req, res) => {
+    if (req.body.message.trim() === "") {
+      return res.status(400).render("posts/new", {
+        error:
+        "Post content cannot be blank"
+      })
+    }
+
     const firstName = req.session.user.firstName;
     const lastName = req.session.user.lastName;
     const author = `${firstName} ${lastName}`;
+    const initials = `${firstName[0]}${lastName[0]}`
+    
+    if (req.body.message.trim() === "") {
+      return res.status(400).render("posts/new", {
+        initials: initials,
+        error:
+        "Post content cannot be blank"
+      })
+    }
 
+    
     const post = new Post({
       author: author,
       message: req.body.message
