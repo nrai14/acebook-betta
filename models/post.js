@@ -1,13 +1,5 @@
 const mongoose = require("mongoose");
-
-const CommentSchema = new mongoose.Schema({
-  author: String,
-  content: {
-    type: String,
-    maxLength: 114,
-    timestamp: { type: Date, default: Date.now },
-  }
-});
+const Comment = require("./Comment");
 
 const PostSchema = new mongoose.Schema({
   author: String,
@@ -16,7 +8,7 @@ const PostSchema = new mongoose.Schema({
     maxLength: 500
   },
   likes: { type: Number, default: 0 },
-  comments: [CommentSchema]
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }]
 }, { timestamps: true });
 
 const Post = mongoose.model("Post", PostSchema);
