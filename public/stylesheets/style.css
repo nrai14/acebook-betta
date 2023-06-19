@@ -182,7 +182,7 @@ hr {
 }
 
 .right-container a {
-  padding: 1vh 1vh;
+  padding: 1vh;
 }
 /* Media Query for Responsive Layout */
 @media (max-width: 768px) {
