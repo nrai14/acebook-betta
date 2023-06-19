@@ -83,10 +83,12 @@ const PostController = {
         author: author,
         content: req.body.comment
       });
+      
       await comment.save();
       post.comments.push(comment);
       await post.save();
       res.status(201).redirect("/posts");
+      
     } catch (err) {
       throw err;
     }

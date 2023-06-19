@@ -12,6 +12,12 @@
   </div>
 </div>   
 
+{{#if error }}
+<div class="error-message">
+    {{error}}
+</div>
+{{/if}}
+
 <div class="timeline">
   {{#each posts}}
   <div class="posts">
