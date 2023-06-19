@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    match: /^[A-Za-z\u00C0-\u00FF\- ]+$/,
+    match: /^[A-Za-z\u00C0-\u00FF\-'. ]+$/,
     required: true,
     minLength: [1, 'First name must have at least 1 character'],
     maxLength: [20, 'First name cannot exceed 20 characters'],
@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
   },
   lastName: {
     type: String,
-    match: /^[A-Za-z\u00C0-\u00FF\- ]+$/,
+    match: /^[A-Za-z\u00C0-\u00FF\-'. ]+$/,
     required: true,
     minLength: [1, 'Last name must have at least 1 character'],
     maxLength: [20, 'Last name cannot exceed 20 characters'],
