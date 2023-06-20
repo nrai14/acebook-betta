@@ -1,25 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const isAuthenticated = require('../authMiddleware');
-<<<<<<< HEAD
-
-=======
->>>>>>> v1
 const PostsController = require("../controllers/posts");
 const axios = require('axios');
 
-<<<<<<< HEAD
-=======
 const YOUR_API_KEY = "eLyYwLxVEXe3Jzab51w6OoNKOXhG4byS";
 
->>>>>>> v1
 router.get("/", isAuthenticated, PostsController.Index);
 router.post("/", isAuthenticated, PostsController.Create);
 router.get("/new", isAuthenticated, PostsController.New);
 router.post("/:id/likes", isAuthenticated, PostsController.Like);
 router.post("/:id/comments", isAuthenticated, PostsController.Comment);
-<<<<<<< HEAD
-=======
 
 router.post('/gif', async (req, res) => {
     const { searchQuery } = req.body;
@@ -34,6 +25,5 @@ router.post('/gif', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
->>>>>>> v1
 
 module.exports = router;
