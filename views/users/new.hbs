@@ -21,12 +21,13 @@
     <input id="last-name" type="last-name" name="lastName" maxlength="20" placeholder="last name" required class="input-box" aria-label="Type last name here" tabindex="2">
     <label for="email">Email:</label>
     <input id="email" type="email" name="email" placeholder="email" required class="input-box" aria-label="Type email address here" tabindex="3">
-    <ul class="password-requirement">
+    <h2 class="visually-hidden">Password Requirements</h2>
+    <ul class="password-requirement" aria-label="Password requirements">
       Passwords must contain:
-      <li>At least 8 characters</li>
-      <li>At least one letter (A-Z)</li>
-      <li>At least one number</li> 
-      <li>At least one special characters</li> 
+      <li role="listitem">At least 8 characters</li>
+      <li role="listitem">At least one letter (A-Z)</li>
+      <li role="listitem">At least one number</li> 
+      <li role="listitem">At least one special characters</li> 
     </ul>
     <label for="password">Password:</label>
     <input id="password" type="password" name="password" placeholder="password" required class="input-box" aria-label="Type password here" tabindex="4">
