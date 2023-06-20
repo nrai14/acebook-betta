@@ -154,6 +154,10 @@ label {
   visibility: hidden;
 }
 
+button:focus {
+  outline: 3px solid blue;
+}
+
 /* navbar media query */
 @media (max-width: 768px) {
   .timeline-navbar {

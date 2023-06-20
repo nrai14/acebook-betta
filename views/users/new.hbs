@@ -11,11 +11,11 @@
       </div>
     {{/if}}
     <label for="first-name">First Name:</label>
-    <input id="first-name" type="first-name" name="firstName" maxlength="20" placeholder="first name" required class="input-box" aria-label="Type first name here">
+    <input id="first-name" type="first-name" name="firstName" maxlength="20" placeholder="first name" required class="input-box" aria-label="Type first name here" tabindex="1">
     <label for="last-name">Last Name:</label>
-    <input id="last-name" type="last-name" name="lastName" maxlength="20" placeholder="last name" required class="input-box" aria-label="Type last name here">
+    <input id="last-name" type="last-name" name="lastName" maxlength="20" placeholder="last name" required class="input-box" aria-label="Type last name here" tabindex="2">
     <label for="email">Email:</label>
-    <input id="email" type="email" name="email" placeholder="email" required class="input-box" aria-label="Type email address here">
+    <input id="email" type="email" name="email" placeholder="email" required class="input-box" aria-label="Type email address here" tabindex="3">
     <ul class="password-requirement">
       Passwords must contain:
       <li>At least 8 characters</li>
@@ -24,25 +24,25 @@
       <li>At least one special characters</li> 
     </ul>
     <label for="password">Password:</label>
-    <input id="password" type="password" name="password" placeholder="password" required class="input-box" aria-label="Type password here">
+    <input id="password" type="password" name="password" placeholder="password" required class="input-box" aria-label="Type password here" tabindex="4">
     <label for="confirmPassword">Confirm Password:</label>
-    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="confirm password" required class="input-box" aria-label="Retype password here">
+    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="confirm password" required class="input-box" aria-label="Retype password here" tabindex="5">
     <fieldset>
       <legend>Choose an icon:</legend>
       <div class="icon-select">
-      <input type="radio" name="icon" value=":)" class="icon-radio"><div class="icon">:)</div>
-      <input type="radio" name="icon" value=":o" class="icon-radio"><div class="icon">:o</div>
-      <input type="radio" name="icon" value=":D" class="icon-radio"><div class="icon">:D</div>
-      <input type="radio" name="icon" value=":3" class="icon-radio"><div class="icon">:3</div>
+      <input type="radio" name="icon" value=":)" class="icon-radio" tabindex="6"><div class="icon">:)</div>
+      <input type="radio" name="icon" value=":o" class="icon-radio" tabindex="7"><div class="icon">:o</div>
+      <input type="radio" name="icon" value=":D" class="icon-radio" tabindex="8"><div class="icon">:D</div>
+      <input type="radio" name="icon" value=":3" class="icon-radio" tabindex="9"><div class="icon">:3</div>
     </div>
       <div class="icon-select">
-        <input type="radio" name="icon" value=";)" class="icon-radio"><div class="icon">;)</div>
-        <input type="radio" name="icon" value=":b" class="icon-radio"><div class="icon">:b</div>
-        <input type="radio" name="icon" value=":s" class="icon-radio"><div class="icon">:s</div>
-        <input type="radio" name="icon" value=":|" class="icon-radio"><div class="icon">:|</div>
+        <input type="radio" name="icon" value=";)" class="icon-radio" tabindex="10"><div class="icon">;)</div>
+        <input type="radio" name="icon" value=":b" class="icon-radio" tabindex="11"><div class="icon">:b</div>
+        <input type="radio" name="icon" value=":s" class="icon-radio" tabindex="12"><div class="icon">:s</div>
+        <input type="radio" name="icon" value=":|" class="icon-radio" tabindex="13"><div class="icon">:|</div>
       </div>
     </fieldset>
-    <input id="submit" type="submit" value="Submit" class="global-button">
+    <button id="submit" type="submit" class="global-button" tabindex="14">Submit</button>
   </form>
   <br>
   <p>Did you mean <a href="/sessions/new">login</a>?</p>
