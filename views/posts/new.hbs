@@ -42,8 +42,9 @@
           <p>No GIFs found.</p>
         {{/if}}
       </div>
-        <textarea id="message" class="input-area" type="text" name="message" value="" rows="6" placeholder="Say something..." maxlength="500" required></textarea>
-        <input type="submit" value="Submit" class="global-button">
+        <label for="message">Message:</label>
+        <textarea id="message" class="input-area" type="text" name="message" value="" rows="6" placeholder="Say something..." maxlength="500" required aria-label="Type post message here"></textarea>
+        <button type="submit" class="global-button" aria-label="Submit Post">Submit</button>
     </form>
   </div>
 </div>

@@ -10,9 +10,12 @@
       {{error}}
       </div>
     {{/if}}
-    <input id="first-name" type="first-name" name="firstName" maxlength="20" placeholder="first name" required class="input-box">
-    <input id="last-name" type="last-name" name="lastName" maxlength="20" placeholder="last name" required class="input-box">
-    <input id="email" type="email" name="email" placeholder="email" required class="input-box">
+    <label for="first-name">First Name:</label>
+    <input id="first-name" type="first-name" name="firstName" maxlength="20" placeholder="first name" required class="input-box" aria-label="Type first name here">
+    <label for="last-name">Last Name:</label>
+    <input id="last-name" type="last-name" name="lastName" maxlength="20" placeholder="last name" required class="input-box" aria-label="Type last name here">
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" placeholder="email" required class="input-box" aria-label="Type email address here">
     <ul class="password-requirement">
       Passwords must contain:
       <li>At least 8 characters</li>
@@ -20,20 +23,25 @@
       <li>At least one number</li> 
       <li>At least one special characters</li> 
     </ul>
-    <input id="password" type="password" name="password" placeholder="password" required class="input-box">
-    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="confirm password" required class="input-box">
-    <div class="icon-select">
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" placeholder="password" required class="input-box" aria-label="Type password here">
+    <label for="confirmPassword">Confirm Password:</label>
+    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="confirm password" required class="input-box" aria-label="Retype password here">
+    <fieldset>
+      <legend>Choose an icon:</legend>
+      <div class="icon-select">
       <input type="radio" name="icon" value=":)" class="icon-radio"><div class="icon">:)</div>
       <input type="radio" name="icon" value=":o" class="icon-radio"><div class="icon">:o</div>
       <input type="radio" name="icon" value=":D" class="icon-radio"><div class="icon">:D</div>
       <input type="radio" name="icon" value=":3" class="icon-radio"><div class="icon">:3</div>
     </div>
-    <div class="icon-select">
-      <input type="radio" name="icon" value=";)" class="icon-radio"><div class="icon">;)</div>
-      <input type="radio" name="icon" value=":b" class="icon-radio"><div class="icon">:b</div>
-      <input type="radio" name="icon" value=":s" class="icon-radio"><div class="icon">:s</div>
-      <input type="radio" name="icon" value=":|" class="icon-radio"><div class="icon">:|</div>
-    </div>
+      <div class="icon-select">
+        <input type="radio" name="icon" value=";)" class="icon-radio"><div class="icon">;)</div>
+        <input type="radio" name="icon" value=":b" class="icon-radio"><div class="icon">:b</div>
+        <input type="radio" name="icon" value=":s" class="icon-radio"><div class="icon">:s</div>
+        <input type="radio" name="icon" value=":|" class="icon-radio"><div class="icon">:|</div>
+      </div>
+    </fieldset>
     <input id="submit" type="submit" value="Submit" class="global-button">
   </form>
   <br>
