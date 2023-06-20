@@ -28,8 +28,8 @@
     {{/if}}
     <form action="/posts/gif" method="post" class="gif-finder">
       <div>
-        <input type="text" name="searchQuery" placeholder="Search GIFs" class="input-box" tabindex="1">
-        <input type="submit" value="Search" class="global-button" tabindex="2">
+        <input type="text" name="searchQuery" placeholder="Search GIFs" class="input-box">
+        <input type="submit" value="Search" class="global-button">
       </div>
     </form>
     <form id="new-post-form" action="/posts" method="post">
@@ -38,10 +38,10 @@
           <ul class="gif-list">
             {{#each gifs}}
             <li>
-              <label class="gif">
-                <input type="radio" name="gifUrl" value="{{this.images.original.url}}" tabindex="3">
+              <div class="gif" aria-label="{{this.title}}">
+                <input type="radio" name="gifUrl" value="{{this.images.original.url}}">
                 <img src="{{this.images.original.url}}" alt="{{this.title}}" class="gif-thumbnail">
-              </label> 
+              </div> 
             </li>
           {{/each}}
           </ul>
@@ -49,9 +49,8 @@
           <p class="no-gif-line">No GIFs found.</p>
         {{/if}}
       </div>
-        <label for="message">Message:</label>
-        <textarea id="message" class="input-area" type="text" name="message" value="" rows="6" placeholder="Say something..." maxlength="500" tabindex="4" required aria-label="Type post message here"></textarea>
-        <button type="submit" class="global-button" aria-label="Submit Post" tabindex="5">Submit</button>
+        <textarea id="message" class="input-area" type="text" name="message" value="" rows="6" placeholder="Say something..." maxlength="500" required></textarea>
+        <input type="submit" value="Submit" class="global-button">
     </form>
   </div>
 </div>
