@@ -1,8 +1,7 @@
-function validateCommentLength(req, res, next) {
+function validateCommentLength(req, res) {
     if (req.body.comment.length > 114) {
         return res.status(400).redirect('/posts')
-    }
-    next();
+    };
 }
 
 module.exports = validateCommentLength
