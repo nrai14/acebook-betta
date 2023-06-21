@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const isAuthenticated = require('../authMiddleware');
+const validateCommentLength = require('../functions/validateCommentLength')
 const PostsController = require("../controllers/posts");
 const axios = require('axios');
 
@@ -10,7 +11,7 @@ router.get("/", isAuthenticated, PostsController.Index);
 router.post("/", isAuthenticated, PostsController.Create);
 router.get("/new", isAuthenticated, PostsController.New);
 router.post("/:id/likes", isAuthenticated, PostsController.Like);
-router.post("/:id/comments", isAuthenticated, PostsController.Comment);
+router.post("/:id/comments", isAuthenticated, validateCommentLength, PostsController.Comment);
 
 router.post('/gif', async (req, res) => {
     const { searchQuery } = req.body;
