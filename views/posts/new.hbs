@@ -149,4 +149,8 @@
     localStorage.removeItem("messageText");
   });
 
+  // Delete message text from local storage when page is left or refreshed
+  window.addEventListener('unload', () => {
+  localStorage.removeItem('messageText');
+  });
 </script> 
