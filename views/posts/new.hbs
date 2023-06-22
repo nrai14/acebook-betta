@@ -106,31 +106,40 @@
   // function to handle search and update flag variable accordingly
   function handleSearch() {
     showNoGifsFound = false;
-  const apiKey = "eLyYwLxVEXe3Jzab51w6OoNKOXhG4byS";
-  const url = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${apiKey}`;
+    const apiKey = "eLyYwLxVEXe3Jzab51w6OoNKOXhG4byS";
+    const url = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${apiKey}`;
 
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // check if any results were found
-      if (data.data.length > 0) {
-        // update the "gifs" array and render the gif list
-        gifs = data.data;
-        renderGifList();
-      } else {
-        // no results found, show the "No GIFs found" message
-        showNoGifsFound = true;
-        renderNoGifsFound();
-      }
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
+    // Save the message text to a temp variable
+    const messageText = document.getElementById("message").value;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // check if any results were found
+        if (data.data.length > 0) {
+          // update the "gifs" array and render the gif list
+          gifs = data.data;
+          renderGifList();
+        } else {
+          // no results found, show the "No GIFs found" message
+          showNoGifsFound = true;
+          renderNoGifsFound();
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      })
+      // Set the message text back to local storage after the search has completed
+      .finally(() => {
+        if (messageText !== "") {
+          localStorage.setItem("messageText", messageText);
+        }
+      });
   }
 
   // Save message text to local storage when the user types in the text area
@@ -149,8 +158,8 @@
     localStorage.removeItem("messageText");
   });
 
-  // Delete message text from local storage when page is left or refreshed
-  window.addEventListener('unload', () => {
-  localStorage.removeItem('messageText');
+  // Remove message text from local storage when the user navigates away from the page
+  window.addEventListener("unload", function() {
+    localStorage.removeItem("messageText");
   });
 </script> 
